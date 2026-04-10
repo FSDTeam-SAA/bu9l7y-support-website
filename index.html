@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support | Find Answers Fast</title>
+    <meta name="description" content="Get instant help and find answers to your technical questions with IT Support.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <header class="sticky-header">
+        <nav class="container">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">IT Support</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#status">Status</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-ticket">Submit a Ticket</a>
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="app">
+        <!-- Home / Hero Section -->
+        <section id="home" class="section active-section">
+            <div class="hero-content container">
+                <div class="hero-text-area fade-in">
+                    <h1 class="hero-title">Find answers fast.<br>Get help <span class="text-teal">instantly</span>.</h1>
+                    <p class="hero-tagline">Your all-in-one resource for technical support, account billing, and getting started guides.</p>
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="hero-search" placeholder="Search for answers... (Press '/' to focus)">
+                            <div id="quick-results" class="quick-results"></div>
+                        </div>
+                    </div>
+                    <div class="hero-ctas">
+                        <a href="#faq" class="btn btn-primary">Browse Topics</a>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in">
+                    <img src="hero.png" alt="IT Support Illustration" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about IT Support and our services.</p>
+                </div>
+                
+                <div class="faq-filters">
+                    <button class="filter-tab active" data-category="all">All</button>
+                    <button class="filter-tab" data-category="getting-started">Getting Started</button>
+                    <button class="filter-tab" data-category="account-billing">Account & Billing</button>
+                    <button class="filter-tab" data-category="technical-issues">Technical Issues</button>
+                </div>
+
+                <div class="faq-search-bar">
+                    <input type="text" id="faq-search" placeholder="Filter questions...">
+                </div>
+
+                <div class="faq-container accordion" id="faq-list">
+                    <!-- FAQ items will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Status Page -->
+        <section id="status" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">System Status</h2>
+                    <p class="section-subtitle">Real-time information on our systems and services.</p>
+                </div>
+
+                <div class="status-banner operational" id="overall-status-banner">
+                    <span class="status-icon">✓</span>
+                    <span class="status-msg">All systems operational</span>
+                </div>
+
+                <div class="status-grid" id="status-grid">
+                    <!-- Status items injected by JS -->
+                    <div class="status-card">
+                        <div class="status-info">
+                            <h3>API</h3>
+                            <p>Global service endpoints</p>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="dot dot-green"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-info">
+                            <h3>Website</h3>
+                            <p>Main marketing site</p>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="dot dot-green"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-info">
+                            <h3>App</h3>
+                            <p>Web and Mobile applications</p>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="dot dot-yellow"></span>
+                            <span class="status-label">Degraded</span>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-info">
+                            <h3>Notifications</h3>
+                            <p>Push and Email delivery</p>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="dot dot-green"></span>
+                            <span class="status-label">Operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2 class="section-title">Get in touch</h2>
+                        <p>Can't find what you're looking for? Submit a ticket and our team will get back to you within 24 hours.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="icon">📍</span>
+                                <div>
+                                    <h4>Our Office</h4>
+                                    <p>123 Tech Lane, Silicon Valley, CA</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="icon">📧</span>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <p>support@itsupport.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="icon">📱</span>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p>+1 (555) 000-0000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <form id="support-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                                <span class="error-msg">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                                <span class="error-msg">Please enter a valid email</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" required>
+                                    <option value="" disabled selected>Select a topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="billing">Billing Issue</option>
+                                    <option value="feature">Feature Request</option>
+                                </select>
+                                <span class="error-msg">Please select a subject</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+                                <span class="error-msg">Please enter your message</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="file-label">
+                                    <span class="file-icon">📎</span>
+                                    <span>Attach a file (Optional)</span>
+                                    <input type="file" id="attachment" style="display:none;">
+                                </label>
+                                <div id="file-name" class="file-name-preview"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                        </form>
+                        <div id="form-success" class="form-success" style="display:none;">
+                            <div class="success-icon">✓</div>
+                            <h3>Ticket Submitted!</h3>
+                            <p>We've received your request and will contact you via email shortly.</p>
+                            <button id="reset-form" class="btn btn-outline">Send another message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">IT Support</span>
+                </div>
+                <p>Empowering teams with seamless technical support and resources.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#status">Status</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Email">✉</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 IT Support Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Help Button -->
+    <button id="floating-help" class="floating-btn" aria-label="Need Help?">
+        <span>?</span>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
